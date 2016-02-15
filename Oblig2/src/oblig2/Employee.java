@@ -1,12 +1,24 @@
 package oblig2;
 
-public class Employee extends Card{
+import java.util.Scanner;
+
+public class Employee extends Card implements Constants{
+	private static double factor = 0.8;
+	private double hourWage;
+	private int seniority;
+	Scanner input = new Scanner(System.in);
+	Scanner scanner = new Scanner(System.in);
 	
 	public Employee(){		
 	}
 	
 	public Employee(String name, int pincode){
-		super(name,pincode);		
+		super(name,pincode);
+		System.out.println("Please enter hourly wage: ");
+		this.hourWage = input.nextDouble();
+		System.out.println("Please enter service seniority[years]: ");
+		this.seniority = input.nextInt();
+		
 	}	
 	
 	
@@ -28,6 +40,61 @@ public class Employee extends Card{
 		else
 			return true;
 
-	}	
+	}
+
+	@Override
+	public void setGivenName() {
+		String surname = this.getSurName();
+		System.out.println("Please enter first name: ");
+		String firstname = input.next();
+		firstname = firstname.concat(" "); // inserting space
+		super.name = firstname.concat(surname);
+		
+	}
+
+	@Override
+	public String getGivenName() {
+		int indexSpace = name.indexOf(" ");
+		return name.substring(0, indexSpace);
+	}
+
+	@Override
+	public void setSurName() {
+		String firstname = this.getGivenName();
+		firstname = firstname.concat(" "); // inserting space
+		System.out.println("Please enter family name: ");
+		String surname = input.next();
+		super.name = firstname.concat(surname);
+		
+	}
+
+	@Override
+	public String getSurName() {
+		int indexSpace = name.indexOf(" ");
+		return name.substring(indexSpace+1);
+	}
+
+	@Override
+	public void setFullName() {
+		System.out.println("Please enter full name: ");
+		super.name = scanner.nextLine();
+			
+	}
+
+	@Override
+	public String getFullName() {
+		return name;
+	}
+
+	@Override
+	public double calculateCredit() {
+		return factor*hourWage;
+	}
+
+	@Override
+	public double calculateBonus() {
+		return factor*seniority;
+	}
+	
 
 }
