@@ -33,12 +33,16 @@ public class TestCard {
         
         switch(test){
         case 1:
-            System.out.println("\nTest of card: with pincode 1234 is" + (k1.checkPIN(1234) ?  " valid" :  " invalid" ) );
-            System.out.println("Test of card: with pincode 9999 is" + (k2.checkPIN(9999) ?  " valid" :  " invalid" ) );
-            System.out.println("Test of card: with pincode 6678 is" + (k3.checkPIN(6678) ?  " valid" :  " invalid" ) + "\n");
-            System.out.println("Test of card: with pincode 6678 is" + (k4.checkPIN(1124) ?  " valid" :  " invalid" ) + "\n");
-            System.out.println("Test of card: with pincode 6678 is" + (k5.checkPIN(9999) ?  " valid" :  " invalid" ) + "\n");
+            System.out.println("\nTest of card: with pincode 1234 is" + (k1.checkPIN(1234) ?  " valid" :  " invalid" ));
+            System.out.println("Test of card: with pincode 9999 is" + (k2.checkPIN(9999) ?  " valid" :  " invalid" ));
+            System.out.println("Test of card: with pincode 6678 is" + (k3.checkPIN(6678) ?  " valid" :  " invalid" ));
+            System.out.println("Test of card: with pincode 6678 is" + (k4.checkPIN(1124) ?  " valid" :  " invalid" ));
+            System.out.println("Test of card: with pincode 6678 is" + (k5.checkPIN(9999) ?  " valid" :  " invalid" ));
             System.out.println("Test of card: with pincode 6678 is" + (k6.checkPIN(9999) ?  " valid" :  " invalid" ) + "\n");
+            for (int i=0; i<reg.size(); i++) {
+                Card card = (Card)reg.get(i);  
+                System.out.println(card);
+            }
             break;
         case 2:
             // testing interface setFullName - will override full name if true

@@ -30,7 +30,7 @@ public class Employee extends Card implements Constants{
 		
 		if (day == 1 || day == 7) // sunday or saturday
 			super.accessDenided = true; // card is blocked, use pin
-		else if ((day != 1 || day!=7) && (time < 7 || time > 17)) //not sunday or not saturday but outside office hours    
+		else if (time <= 7 || time >= 17) //not sunday or not saturday but outside office hours    
 			super.accessDenided = true; // card is blocked, use pin
 		else
 			super.accessDenided = false;
