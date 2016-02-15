@@ -45,7 +45,7 @@ public class Employee extends Card implements Constants{
 	@Override
 	public void setGivenName() {
 		String surname = this.getSurName();
-		System.out.println("Please enter first name: ");
+		System.out.println("Please enter a given name in order to override, otherwise type the same name: ");
 		String firstname = input.next();
 		firstname = firstname.concat(" "); // inserting space
 		super.name = firstname.concat(surname);
@@ -62,7 +62,7 @@ public class Employee extends Card implements Constants{
 	public void setSurName() {
 		String firstname = this.getGivenName();
 		firstname = firstname.concat(" "); // inserting space
-		System.out.println("Please enter family name: ");
+		System.out.println("Please enter a surname to override, otherwise type the same surname: ");
 		String surname = input.next();
 		super.name = firstname.concat(surname);
 		
@@ -76,7 +76,7 @@ public class Employee extends Card implements Constants{
 
 	@Override
 	public void setFullName() {
-		System.out.println("Please enter full name: ");
+		System.out.println("Please enter full name to override, otherwise type the same full name: ");
 		super.name = scanner.nextLine();
 			
 	}
